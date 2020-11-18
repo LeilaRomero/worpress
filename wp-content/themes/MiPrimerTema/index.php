@@ -8,11 +8,15 @@
 </head>
 <body>
 <?php get_header(); ?>
-<h1><?php bloginfo( 'name' ); ?></h1>
 
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<img src="">
+<?php if ( have_posts() ) :
+    while ( have_posts() ) :
+        the_post();
+        the_title('<h1>','</h1>');
+        the_post_thumbnail('100','100');
+	    the_excerpt();?>
+
 
 <?php endwhile; ?>
 
